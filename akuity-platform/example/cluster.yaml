@@ -2,7 +2,18 @@ apiVersion: argocd.akuity.io/v1alpha1
 kind: Cluster
 metadata:
   name: kind
+  namespace: akuity
 spec:
-  description: "kind cluster"
   data:
+    appReplication: false
+    autoUpgradeDisabled: false
+    datadogAnnotationsEnabled: false
+    eksAddonEnabled: false
+    kustomization:
+      apiVersion: kustomize.config.k8s.io/v1beta1
+      kind: Kustomization
+    multiClusterK8sDashboardEnabled: false
+    redisTunneling: false
     size: small
+    targetVersion: 0.5.55
+  description: kind cluster

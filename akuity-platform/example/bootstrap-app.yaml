@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bootstrap
+  namespace: argocd
 spec:
   destination:
     name: in-cluster
@@ -10,7 +11,6 @@ spec:
     path: apps/
     repoURL: 'https://github.com/akuity/declarative-example'
     targetRevision: HEAD
-    directory: {}
   project: default
   syncPolicy:
     automated:

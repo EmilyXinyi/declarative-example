@@ -4,5 +4,20 @@ metadata:
   name: example
 spec:
   description: "Declarative example."
-  instanceSpec: {}
-  version: v2.9.1
+  instanceSpec:
+    aiSupportEngineerExtension: {}
+    appInAnyNamespaceConfig: {}
+    appsetPolicy:
+      policy: sync
+    clusterCustomizationDefaults:
+      kustomization: {}
+    crossplaneExtension: {}
+    declarativeManagementEnabled: true
+    kubeVisionArgoExtension: {}
+    kubeVisionConfig:
+      cveScanConfig:
+        rescanInterval: 8h
+    secrets: {}
+    subdomain: 76thom3s07c2igh1
+  shard: ""
+  version: v2.14.2-ak.52
