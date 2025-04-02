@@ -1,0 +1,12 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: KargoAgent
+metadata:
+  name: kargo-agent
+  namespace: akuity
+spec:
+  data:
+    akuityManaged: true
+    autoUpgradeDisabled: false
+    kustomization: null
+    size: small
+    targetVersion: 0.5.55

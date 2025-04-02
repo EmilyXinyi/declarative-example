@@ -1,0 +1,41 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Kargo
+metadata:
+  name: kargo-instance
+spec:
+  description: ""
+  kargoInstanceSpec:
+    agentCustomizationDefaults:
+      kustomization: null
+  oidcConfig:
+    additionalScopes: null
+    adminAccount:
+      claims:
+        groups:
+          values:
+          - kargo-admin
+    cliClientId: ""
+    clientId: ""
+    dexConfig: |-
+      connectors:
+        - type: saml
+          id: okta
+          name: OKTA
+          config:
+            ssoURL: https://dev-90026493.okta.com/app/dev-90026493_kargo_1/exko3r40miGbjPmtC5d7/sso/saml
+            redirectURI: https://p6143sllpudewnc5.kargo.akuity.cloud/dex/callback
+            usernameAttr: name
+            emailAttr: email
+            groupsAttr: groups
+            caData: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURxRENDQXBDZ0F3SUJBZ0lHQVpYMElrR0pNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1JR1VNUXN3Q1FZRFZRUUdFd0pWVXpFVE1CRUcKQTFVRUNBd0tRMkZzYVdadmNtNXBZVEVXTUJRR0ExVUVCd3dOVTJGdUlFWnlZVzVqYVhOamJ6RU5NQXNHQTFVRUNnd0VUMnQwWVRFVQpNQklHQTFVRUN3d0xVMU5QVUhKdmRtbGtaWEl4RlRBVEJnTlZCQU1NREdSbGRpMDVNREF5TmpRNU16RWNNQm9HQ1NxR1NJYjNEUUVKCkFSWU5hVzVtYjBCdmEzUmhMbU52YlRBZUZ3MHlOVEEwTURJd01UTXpNREJhRncwek5UQTBNREl3TVRNME1EQmFNSUdVTVFzd0NRWUQKVlFRR0V3SlZVekVUTUJFR0ExVUVDQXdLUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnd3TlUyRnVJRVp5WVc1amFYTmpiekVOTUFzRwpBMVVFQ2d3RVQydDBZVEVVTUJJR0ExVUVDd3dMVTFOUFVISnZkbWxrWlhJeEZUQVRCZ05WQkFNTURHUmxkaTA1TURBeU5qUTVNekVjCk1Cb0dDU3FHU0liM0RRRUpBUllOYVc1bWIwQnZhM1JoTG1OdmJUQ0NBU0l3RFFZSktvWklodmNOQVFFQkJRQURnZ0VQQURDQ0FRb0MKZ2dFQkFMUnY3eEtzVW1XSnB3RHZxL0NyL29IR3B4T2RCeDZXMU42dWNwMFg3UWRXcmM1Rkg0Sy8yL09ycFU5MXJtKy9yR3pBaUI1YgpvbERVUVAwTVBrTFZJOVA4UDhmbjdZZ3MvZUhaRWV1NG5QM1MrYU1IMEZObUorTm5QR0R0TkR5Q0hPS1hvazJFYzFrd2tNVlhuRVJMCmo3ZDd0SHdzM1NtY3V4c1R4eitYUnBJMFdZQzhIeHBQQXBxeHdiU0J2WmN6b0Y2bVpJbkc1cVlicllabUxkOGtYWk13VGZtU3lLUTYKV3FSNUxwanhrSGhPMVNEKzZTYXlPendJb0xzaUh3c1FCeWxzZUlNTmNEOEpVRGdPVTUwTEwxZUdyenpRU2N2TXVJQ2lBZjlOdEVycQpyaU1HMm5NbnRKTjE5ZWsrMTROcXp1aWloYUJ2dUZtaGYzZVpEcDRaV3pjQ0F3RUFBVEFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBCkNXREVUbDdvUE03ckNjUlF6amt4eVR4SGpkVG9SQm9iRVE4cUtnV1pzVENvQmV5dTNYTzAwSW1JM3BFQXhyRDhYeGlHemF0QVBablQKRDJmdWg5SktkK3Z1aThZU1laN0tqbFFUNDNyR0dLVTB1QnZ6K0dPb04xTlFrR2MvemxiY21jbXJJRUlsT0IvQlZGbkZvVWZENTc2OQp5YlpVZXdZZDN0QmN3QTUyQTZSTjNraGtYdmtyU0tEMlZBcUdwN0FKT3VXTFQ4L0UxWGRMWFVFcHRLVG5wdWVVbzdFU3RPQmo0czkrCjViRGZodHZJTUUwa1FIZFhiU2lLUzRVdkVJZ1BHdzhacnhyV2tDdGFNSytKUkhGV0dNM0pCWFU2UFlYRE02b2k4RThILzJmSGFKb3YKWktWVG5UQkd0TWlJc3pVTWkreFhzaEZwZFBobGNCLzdlN2xjSFE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t
+    dexConfigSecret: null
+    dexEnabled: true
+    enabled: true
+    issuerUrl: ""
+    viewerAccount:
+      claims:
+        groups:
+          values:
+          - argocd-dev
+  subdomain: p6143sllpudewnc5
+  version: v1.3.1
